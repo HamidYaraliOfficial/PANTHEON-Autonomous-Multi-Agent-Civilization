@@ -1,0 +1,127 @@
+{
+  "dir": "ltr",
+  "app": { "title": "PANTHEON", "subtitle": "自主多智能体文明" },
+  "nav": {
+    "overview": "世界概览",
+    "regions": "区域",
+    "civilizations": "文明",
+    "agents": "智能体检视器",
+    "timeline": "时间线",
+    "economy": "经济",
+    "culture": "文化与语言",
+    "settings": "设置"
+  },
+  "common": {
+    "loading": "加载中…",
+    "refresh": "刷新",
+    "save": "保存",
+    "close": "关闭",
+    "search": "搜索",
+    "none": "无",
+    "id": "编号",
+    "name": "名称",
+    "status": "状态",
+    "connected": "已连接",
+    "disconnected": "已断开"
+  },
+  "overview": {
+    "title": "世界概览",
+    "worldBuilder": "世界构建向导",
+    "seed": "世界种子",
+    "worldName": "世界名称",
+    "numRegions": "区域数量",
+    "numCivilizations": "文明数量",
+    "agentsPerRegion": "每个区域的智能体数量",
+    "resourceAbundance": "资源丰度",
+    "bootstrap": "生成世界",
+    "start": "启动时钟",
+    "pause": "暂停时钟",
+    "speed": "模拟速度",
+    "tick": "心跳(Tick)",
+    "day": "日",
+    "year": "年",
+    "population": "人口",
+    "running": "运行中",
+    "paused": "已暂停",
+    "regionCount": "区域数",
+    "civCount": "文明数"
+  },
+  "regions": {
+    "title": "区域",
+    "biome": "生物群系",
+    "fertility": "肥沃度",
+    "waterAccess": "水资源可达性",
+    "hazard": "环境风险",
+    "resources": "资源",
+    "market": "本地市场",
+    "price": "价格",
+    "stock": "库存"
+  },
+  "civilizations": {
+    "title": "文明",
+    "homeRegions": "本土区域",
+    "founded": "建立时间(Tick)",
+    "culture": "文化",
+    "language": "语言",
+    "norms": "规范",
+    "rituals": "仪式",
+    "symbols": "符号",
+    "stories": "故事",
+    "lexicon": "词汇表",
+    "wordHistory": "词汇演变"
+  },
+  "agents": {
+    "title": "智能体检视器",
+    "searchPlaceholder": "输入智能体编号(例如 region-0-agent-3)",
+    "archetype": "原型",
+    "activity": "活动状态",
+    "needs": "需求",
+    "personality": "性格",
+    "wealth": "财富",
+    "memory": "近期记忆",
+    "relationships": "人际关系",
+    "notFound": "未找到该智能体(可能处于休眠状态,或世界尚未生成)。"
+  },
+  "timeline": {
+    "title": "时间线",
+    "liveFeed": "实时事件流",
+    "topic": "主题",
+    "allTopics": "所有主题"
+  },
+  "economy": {
+    "title": "经济观测站"
+  },
+  "culture": {
+    "title": "文化与语言实验室"
+  },
+  "settings": {
+    "title": "设置",
+    "appearance": "外观",
+    "theme": "主题",
+    "themeWindows": "Windows 11(默认)",
+    "themeLight": "浅色",
+    "themeDark": "深色",
+    "themeRed": "红色主题",
+    "themeBlue": "蓝色主题",
+    "language": "语言",
+    "operatingHours": "服务器开放时间",
+    "operatingHoursHint": "设置实时世界向访问者开放的时间段,请使用24小时制 HH:MM 格式输入时间。",
+    "timezoneOffset": "相对UTC的时区偏移(分钟)",
+    "addWindow": "添加时间段",
+    "removeWindow": "移除",
+    "start": "开始时间",
+    "end": "结束时间",
+    "closedAllDay": "全天关闭",
+    "saveSchedule": "保存时间表",
+    "statusOpenNow": "当前开放",
+    "statusClosedNow": "当前关闭",
+    "closesIn": "距关闭还有",
+    "opensIn": "距开放还有",
+    "neverOpens": "未来7天内此时间表没有开放时段。",
+    "days": {
+      "monday": "星期一", "tuesday": "星期二", "wednesday": "星期三",
+      "thursday": "星期四", "friday": "星期五", "saturday": "星期六", "sunday": "星期日"
+    }
+  },
+  "time": { "d": "天", "h": "时", "m": "分", "s": "秒" }
+}

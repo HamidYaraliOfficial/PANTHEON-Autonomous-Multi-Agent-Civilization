@@ -1,0 +1,127 @@
+{
+  "dir": "ltr",
+  "app": { "title": "PANTHEON", "subtitle": "Autonomous Multi-Agent Civilization" },
+  "nav": {
+    "overview": "World Overview",
+    "regions": "Regions",
+    "civilizations": "Civilizations",
+    "agents": "Agent Inspector",
+    "timeline": "Timeline",
+    "economy": "Economy",
+    "culture": "Culture & Language",
+    "settings": "Settings"
+  },
+  "common": {
+    "loading": "Loading…",
+    "refresh": "Refresh",
+    "save": "Save",
+    "close": "Close",
+    "search": "Search",
+    "none": "None",
+    "id": "ID",
+    "name": "Name",
+    "status": "Status",
+    "connected": "Connected",
+    "disconnected": "Disconnected"
+  },
+  "overview": {
+    "title": "World Overview",
+    "worldBuilder": "World Builder Wizard",
+    "seed": "World seed",
+    "worldName": "World name",
+    "numRegions": "Number of regions",
+    "numCivilizations": "Number of civilizations",
+    "agentsPerRegion": "Agents per region",
+    "resourceAbundance": "Resource abundance",
+    "bootstrap": "Generate world",
+    "start": "Start clock",
+    "pause": "Pause clock",
+    "speed": "Simulation speed",
+    "tick": "Tick",
+    "day": "Day",
+    "year": "Year",
+    "population": "Population",
+    "running": "Running",
+    "paused": "Paused",
+    "regionCount": "Regions",
+    "civCount": "Civilizations"
+  },
+  "regions": {
+    "title": "Regions",
+    "biome": "Biome",
+    "fertility": "Fertility",
+    "waterAccess": "Water access",
+    "hazard": "Hazard profile",
+    "resources": "Resources",
+    "market": "Local market",
+    "price": "Price",
+    "stock": "Stock"
+  },
+  "civilizations": {
+    "title": "Civilizations",
+    "homeRegions": "Home regions",
+    "founded": "Founded (tick)",
+    "culture": "Culture",
+    "language": "Language",
+    "norms": "Norms",
+    "rituals": "Rituals",
+    "symbols": "Symbols",
+    "stories": "Stories",
+    "lexicon": "Lexicon",
+    "wordHistory": "Word evolution"
+  },
+  "agents": {
+    "title": "Agent Inspector",
+    "searchPlaceholder": "Enter an agent ID (e.g. region-0-agent-3)",
+    "archetype": "Archetype",
+    "activity": "Activity",
+    "needs": "Needs",
+    "personality": "Personality",
+    "wealth": "Wealth",
+    "memory": "Recent memory",
+    "relationships": "Relationships",
+    "notFound": "Agent not found (it may be dormant or the world hasn't been generated yet)."
+  },
+  "timeline": {
+    "title": "Timeline",
+    "liveFeed": "Live event feed",
+    "topic": "Topic",
+    "allTopics": "All topics"
+  },
+  "economy": {
+    "title": "Economy Observatory"
+  },
+  "culture": {
+    "title": "Culture & Language Lab"
+  },
+  "settings": {
+    "title": "Settings",
+    "appearance": "Appearance",
+    "theme": "Theme",
+    "themeWindows": "Windows 11 (default)",
+    "themeLight": "Light",
+    "themeDark": "Dark",
+    "themeRed": "Red accent",
+    "themeBlue": "Blue accent",
+    "language": "Language",
+    "operatingHours": "Server operating hours",
+    "operatingHoursHint": "Choose when the live world is open to visitors. Enter times in 24-hour HH:MM format.",
+    "timezoneOffset": "Timezone offset from UTC (minutes)",
+    "addWindow": "Add time window",
+    "removeWindow": "Remove",
+    "start": "Opens at",
+    "end": "Closes at",
+    "closedAllDay": "Closed all day",
+    "saveSchedule": "Save schedule",
+    "statusOpenNow": "Open now",
+    "statusClosedNow": "Closed now",
+    "closesIn": "Closes in",
+    "opensIn": "Opens in",
+    "neverOpens": "This schedule has no open hours in the next 7 days.",
+    "days": {
+      "monday": "Monday", "tuesday": "Tuesday", "wednesday": "Wednesday",
+      "thursday": "Thursday", "friday": "Friday", "saturday": "Saturday", "sunday": "Sunday"
+    }
+  },
+  "time": { "d": "d", "h": "h", "m": "m", "s": "s" }
+}

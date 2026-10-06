@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="win11">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>PANTHEON — Autonomous Multi-Agent Civilization</title>
+<link rel="stylesheet" href="css/theme.css" />
+<link rel="stylesheet" href="css/layout.css" />
+</head>
+<body>
+
+<div class="titlebar">
+  <div class="titlebar-brand">
+    <span class="brand-glyph">◈</span>
+    <span class="brand-text">
+      <strong data-i18n="app.title">PANTHEON</strong>
+      <small data-i18n="app.subtitle">Autonomous Multi-Agent Civilization</small>
+    </span>
+  </div>
+  <div class="titlebar-status">
+    <span id="conn-dot" class="conn-dot"></span>
+    <span id="conn-label" data-i18n="common.disconnected">Disconnected</span>
+  </div>
+  <div class="titlebar-controls">
+    <select id="theme-select" class="chrome-select" aria-label="Theme"></select>
+    <select id="lang-select" class="chrome-select" aria-label="Language">
+      <option value="en">English</option>
+      <option value="fa">فارسی</option>
+      <option value="zh">中文</option>
+    </select>
+  </div>
+</div>
+
+<div class="app-shell">
+  <nav class="sidebar" id="sidebar">
+    <button class="nav-item active" data-view="overview">
+      <span class="nav-icon">⌂</span><span data-i18n="nav.overview">World Overview</span>
+    </button>
+    <button class="nav-item" data-view="regions">
+      <span class="nav-icon">▦</span><span data-i18n="nav.regions">Regions</span>
+    </button>
+    <button class="nav-item" data-view="civilizations">
+      <span class="nav-icon">☖</span><span data-i18n="nav.civilizations">Civilizations</span>
+    </button>
+    <button class="nav-item" data-view="agents">
+      <span class="nav-icon">☺</span><span data-i18n="nav.agents">Agent Inspector</span>
+    </button>
+    <button class="nav-item" data-view="timeline">
+      <span class="nav-icon">≡</span><span data-i18n="nav.timeline">Timeline</span>
+    </button>
+    <button class="nav-item" data-view="economy">
+      <span class="nav-icon">$</span><span data-i18n="nav.economy">Economy</span>
+    </button>
+    <button class="nav-item" data-view="culture">
+      <span class="nav-icon">✎</span><span data-i18n="nav.culture">Culture & Language</span>
+    </button>
+    <button class="nav-item" data-view="settings">
+      <span class="nav-icon">⚙</span><span data-i18n="nav.settings">Settings</span>
+    </button>
+  </nav>
+
+  <main class="content">
+
+    <!-- ============================= OVERVIEW ============================= -->
+    <section id="view-overview" class="view active">
+      <h1 data-i18n="overview.title">World Overview</h1>
+
+      <div class="card-grid">
+        <div class="card stat-card">
+          <span class="stat-label" data-i18n="overview.tick">Tick</span>
+          <span class="stat-value" id="stat-tick">—</span>
+        </div>
+        <div class="card stat-card">
+          <span class="stat-label" data-i18n="overview.day">Day</span>
+          <span class="stat-value" id="stat-day">—</span>
+        </div>
+        <div class="card stat-card">
+          <span class="stat-label" data-i18n="overview.year">Year</span>
+          <span class="stat-value" id="stat-year">—</span>
+        </div>
+        <div class="card stat-card">
+          <span class="stat-label" data-i18n="overview.population">Population</span>
+          <span class="stat-value" id="stat-population">—</span>
+        </div>
+        <div class="card stat-card">
+          <span class="stat-label" data-i18n="overview.regionCount">Regions</span>
+          <span class="stat-value" id="stat-regions">—</span>
+        </div>
+        <div class="card stat-card">
+          <span class="stat-label" data-i18n="overview.civCount">Civilizations</span>
+          <span class="stat-value" id="stat-civs">—</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h2 data-i18n="overview.worldBuilder">World Builder Wizard</h2>
+        </div>
+        <form id="bootstrap-form" class="form-grid">
+          <label><span data-i18n="overview.worldName">World name</span>
+            <input type="text" name="name" value="Aion Prime" />
+          </label>
+          <label><span data-i18n="overview.seed">World seed</span>
+            <input type="number" name="seed" value="1337042" />
+          </label>
+          <label><span data-i18n="overview.numRegions">Number of regions</span>
+            <input type="number" name="num_regions" value="6" min="1" max="64" />
+          </label>
+          <label><span data-i18n="overview.numCivilizations">Number of civilizations</span>
+            <input type="number" name="num_civilizations" value="2" min="1" max="16" />
+          </label>
+          <label><span data-i18n="overview.agentsPerRegion">Agents per region</span>
+            <input type="number" name="agents_per_region" value="40" min="1" max="2000" />
+          </label>
+          <label><span data-i18n="overview.resourceAbundance">Resource abundance</span>
+            <input type="number" step="0.1" name="resource_abundance" value="1.0" />
+          </label>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-accent" data-i18n="overview.bootstrap">Generate world</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h2 data-i18n="overview.speed">Simulation speed</h2>
+          <span class="pill" id="clock-state" data-i18n="overview.paused">Paused</span>
+        </div>
+        <div class="clock-controls">
+          <button class="btn" id="btn-start" data-i18n="overview.start">Start clock</button>
+          <button class="btn" id="btn-pause" data-i18n="overview.pause">Pause clock</button>
+          <input type="range" id="speed-range" min="1" max="50" value="1" />
+          <span id="speed-value">1×</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= REGIONS ============================= -->
+    <section id="view-regions" class="view">
+      <h1 data-i18n="regions.title">Regions</h1>
+      <button class="btn" id="regions-refresh" data-i18n="common.refresh">Refresh</button>
+      <div class="card-grid" id="regions-list"></div>
+    </section>
+
+    <!-- ========================= CIVILIZATIONS ========================= -->
+    <section id="view-civilizations" class="view">
+      <h1 data-i18n="civilizations.title">Civilizations</h1>
+      <button class="btn" id="civs-refresh" data-i18n="common.refresh">Refresh</button>
+      <div class="card-grid" id="civs-list"></div>
+    </section>
+
+    <!-- ============================== AGENTS ============================== -->
+    <section id="view-agents" class="view">
+      <h1 data-i18n="agents.title">Agent Inspector</h1>
+      <div class="search-row">
+        <input type="text" id="agent-search" data-i18n-placeholder="agents.searchPlaceholder"
+               placeholder="Enter an agent ID (e.g. region-0-agent-3)" />
+        <button class="btn btn-accent" id="agent-search-btn" data-i18n="common.search">Search</button>
+      </div>
+      <div class="card" id="agent-detail" style="display:none"></div>
+    </section>
+
+    <!-- ============================= TIMELINE ============================= -->
+    <section id="view-timeline" class="view">
+      <h1 data-i18n="timeline.title">Timeline</h1>
+      <div class="card">
+        <div class="card-header">
+          <h2 data-i18n="timeline.liveFeed">Live event feed</h2>
+        </div>
+        <ul class="event-feed" id="event-feed"></ul>
+      </div>
+    </section>
+
+    <!-- ============================= ECONOMY ============================= -->
+    <section id="view-economy" class="view">
+      <h1 data-i18n="economy.title">Economy Observatory</h1>
+      <div class="card-grid" id="economy-list"></div>
+    </section>
+
+    <!-- ============================= CULTURE ============================= -->
+    <section id="view-culture" class="view">
+      <h1 data-i18n="culture.title">Culture & Language Lab</h1>
+      <div class="card-grid" id="culture-list"></div>
+    </section>
+
+    <!-- ============================= SETTINGS ============================= -->
+    <section id="view-settings" class="view">
+      <h1 data-i18n="settings.title">Settings</h1>
+
+      <div class="card">
+        <div class="card-header"><h2 data-i18n="settings.appearance">Appearance</h2></div>
+        <div class="form-grid">
+          <label><span data-i18n="settings.theme">Theme</span>
+            <select id="theme-select-settings" class="chrome-select"></select>
+          </label>
+          <label><span data-i18n="settings.language">Language</span>
+            <select id="lang-select-settings" class="chrome-select">
+              <option value="en">English</option>
+              <option value="fa">فارسی</option>
+              <option value="zh">中文</option>
+            </select>
+          </label>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h2 data-i18n="settings.operatingHours">Server operating hours</h2>
+          <span class="pill" id="oh-status-pill">—</span>
+        </div>
+        <p class="hint" data-i18n="settings.operatingHoursHint">
+          Choose when the live world is open to visitors. Enter times in 24-hour HH:MM format.
+        </p>
+        <p id="oh-countdown" class="countdown"></p>
+        <label class="tz-row"><span data-i18n="settings.timezoneOffset">Timezone offset from UTC (minutes)</span>
+          <input type="number" id="oh-tz-offset" value="0" />
+        </label>
+        <div id="oh-days"></div>
+        <button class="btn btn-accent" id="oh-save" data-i18n="settings.saveSchedule">Save schedule</button>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<template id="tpl-day-row">
+  <div class="oh-day-row">
+    <div class="oh-day-name"></div>
+    <div class="oh-windows"></div>
+    <button type="button" class="btn btn-small oh-add" data-i18n="settings.addWindow">Add time window</button>
+  </div>
+</template>
+
+<template id="tpl-window">
+  <div class="oh-window">
+    <label data-i18n="settings.start">Opens at</label>
+    <input type="time" class="oh-start" />
+    <label data-i18n="settings.end">Closes at</label>
+    <input type="time" class="oh-end" />
+    <button type="button" class="btn btn-small btn-danger oh-remove" data-i18n="settings.removeWindow">Remove</button>
+  </div>
+</template>
+
+<script src="js/i18n.js"></script>
+<script src="js/operating_hours.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

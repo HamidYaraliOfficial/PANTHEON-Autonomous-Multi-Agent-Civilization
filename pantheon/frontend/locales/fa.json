@@ -1,0 +1,127 @@
+{
+  "dir": "rtl",
+  "app": { "title": "PANTHEON", "subtitle": "تمدن خودمختار چند-عامله" },
+  "nav": {
+    "overview": "نمای کلی جهان",
+    "regions": "مناطق",
+    "civilizations": "تمدن‌ها",
+    "agents": "بازرس عامل‌ها",
+    "timeline": "خط زمانی",
+    "economy": "اقتصاد",
+    "culture": "فرهنگ و زبان",
+    "settings": "تنظیمات"
+  },
+  "common": {
+    "loading": "در حال بارگذاری…",
+    "refresh": "بروزرسانی",
+    "save": "ذخیره",
+    "close": "بستن",
+    "search": "جستجو",
+    "none": "هیچ‌کدام",
+    "id": "شناسه",
+    "name": "نام",
+    "status": "وضعیت",
+    "connected": "متصل",
+    "disconnected": "قطع شده"
+  },
+  "overview": {
+    "title": "نمای کلی جهان",
+    "worldBuilder": "جادوگر ساخت جهان",
+    "seed": "بذر جهان (Seed)",
+    "worldName": "نام جهان",
+    "numRegions": "تعداد مناطق",
+    "numCivilizations": "تعداد تمدن‌ها",
+    "agentsPerRegion": "تعداد عامل در هر منطقه",
+    "resourceAbundance": "فراوانی منابع",
+    "bootstrap": "ساخت جهان",
+    "start": "شروع ساعت شبیه‌سازی",
+    "pause": "توقف ساعت شبیه‌سازی",
+    "speed": "سرعت شبیه‌سازی",
+    "tick": "ضربان (Tick)",
+    "day": "روز",
+    "year": "سال",
+    "population": "جمعیت",
+    "running": "در حال اجرا",
+    "paused": "متوقف شده",
+    "regionCount": "تعداد مناطق",
+    "civCount": "تعداد تمدن‌ها"
+  },
+  "regions": {
+    "title": "مناطق",
+    "biome": "زیست‌بوم",
+    "fertility": "حاصلخیزی",
+    "waterAccess": "دسترسی به آب",
+    "hazard": "ریسک محیطی",
+    "resources": "منابع",
+    "market": "بازار محلی",
+    "price": "قیمت",
+    "stock": "موجودی"
+  },
+  "civilizations": {
+    "title": "تمدن‌ها",
+    "homeRegions": "مناطق سرزمین مادری",
+    "founded": "زمان تأسیس (Tick)",
+    "culture": "فرهنگ",
+    "language": "زبان",
+    "norms": "هنجارها",
+    "rituals": "آیین‌ها",
+    "symbols": "نمادها",
+    "stories": "داستان‌ها",
+    "lexicon": "واژگان",
+    "wordHistory": "تحول واژه‌ها"
+  },
+  "agents": {
+    "title": "بازرس عامل‌ها",
+    "searchPlaceholder": "شناسه یک عامل را وارد کنید (مثلاً region-0-agent-3)",
+    "archetype": "کهن‌الگو",
+    "activity": "وضعیت فعالیت",
+    "needs": "نیازها",
+    "personality": "شخصیت",
+    "wealth": "ثروت",
+    "memory": "حافظه اخیر",
+    "relationships": "روابط",
+    "notFound": "عامل یافت نشد (ممکن است غیرفعال باشد یا جهان هنوز ساخته نشده باشد)."
+  },
+  "timeline": {
+    "title": "خط زمانی",
+    "liveFeed": "جریان زنده رویدادها",
+    "topic": "موضوع",
+    "allTopics": "همه موضوعات"
+  },
+  "economy": {
+    "title": "رصدخانه اقتصادی"
+  },
+  "culture": {
+    "title": "آزمایشگاه فرهنگ و زبان"
+  },
+  "settings": {
+    "title": "تنظیمات",
+    "appearance": "ظاهر",
+    "theme": "تم",
+    "themeWindows": "ویندوز ۱۱ (پیش‌فرض)",
+    "themeLight": "روشن",
+    "themeDark": "تیره",
+    "themeRed": "قرمز",
+    "themeBlue": "آبی",
+    "language": "زبان",
+    "operatingHours": "ساعات کاری سرور",
+    "operatingHoursHint": "زمان‌هایی که جهان زنده برای بازدیدکنندگان باز است را مشخص کنید. زمان‌ها را به فرمت ۲۴ ساعته HH:MM وارد کنید.",
+    "timezoneOffset": "اختلاف منطقه زمانی نسبت به UTC (دقیقه)",
+    "addWindow": "افزودن بازه زمانی",
+    "removeWindow": "حذف",
+    "start": "زمان باز شدن",
+    "end": "زمان بسته شدن",
+    "closedAllDay": "تمام روز تعطیل",
+    "saveSchedule": "ذخیره برنامه",
+    "statusOpenNow": "هم‌اکنون باز است",
+    "statusClosedNow": "هم‌اکنون بسته است",
+    "closesIn": "زمان تا بسته شدن",
+    "opensIn": "زمان تا باز شدن",
+    "neverOpens": "این برنامه در ۷ روز آینده هیچ ساعت بازی ندارد.",
+    "days": {
+      "monday": "دوشنبه", "tuesday": "سه‌شنبه", "wednesday": "چهارشنبه",
+      "thursday": "پنجشنبه", "friday": "جمعه", "saturday": "شنبه", "sunday": "یکشنبه"
+    }
+  },
+  "time": { "d": "روز", "h": "ساعت", "m": "دقیقه", "s": "ثانیه" }
+}
